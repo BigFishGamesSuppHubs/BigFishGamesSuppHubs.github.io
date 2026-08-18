@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="google-site-verification" content="jEeCJRcYLSqQsVXh3Lm2V9CSi4_ZM58E6abiJEKULLs" />
-<meta name="msvalidate.01" content="4A48CFBE73D83A95B25EED7006EC3F1D" />
-
-<title>Big Fish Games Help Center</title>
+<title>Big Fish Games Support | Help & Troubleshooting</title>
 
 <meta name="description"
-content="Big Fish Games help center with useful information about game downloads, installation, account access, purchases, updates and troubleshooting.">
+content="Big Fish Games Support guide covering account help, password recovery, downloads, installation, updates, game errors, purchases and troubleshooting.">
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -20,25 +21,38 @@ content="Big Fish Games help center with useful information about game downloads
     box-sizing:border-box;
 }
 
-:root{
-    --blue:#246bfd;
-    --blue2:#4c8dff;
-    --purple:#7547e8;
-    --orange:#ff7956;
-    --yellow:#ffc857;
-    --green:#20bd8c;
-    --dark:#182033;
-    --text:#253047;
-    --muted:#68738a;
-    --light:#f5f7fb;
-    --white:#ffffff;
-    --border:#e7eaf1;
-    --shadow:0 15px 45px rgba(31,48,83,.09);
-}
-
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:90px;
 }
+
+:root{
+    --bg:#050b18;
+    --bg2:#081225;
+    --bg3:#0b1830;
+
+    --card:rgba(13,28,54,.72);
+    --card-solid:#0d1d36;
+
+    --blue:#2196ff;
+    --cyan:#31e7ff;
+    --blue2:#006eff;
+    --purple:#7667ff;
+
+    --white:#f7fbff;
+    --text:#c9d8eb;
+    --muted:#8498b4;
+
+    --border:rgba(86,180,255,.16);
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body{
     font-family:
@@ -48,62 +62,124 @@ body{
         "Segoe UI",
         Arial,
         sans-serif;
+
     color:var(--text);
-    background:#fff;
-    line-height:1.6;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(33,150,255,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(49,231,255,.09),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(118,103,255,.06),
+            transparent 28%
+        ),
+        var(--bg);
+
+    line-height:1.7;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(33,150,255,.045);
+
+    filter:blur(100px);
+
+    top:20%;
+    left:-250px;
+
+    pointer-events:none;
+
+    z-index:-1;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 .container{
-    width:min(1160px,calc(100% - 36px));
+    width:min(1180px, calc(100% - 34px));
     margin:auto;
 }
 
 
-/* =========================
+/* =========================================================
    TOP BAR
-========================= */
+========================================================= */
 
 .topbar{
-    background:var(--dark);
-    color:#dce3f2;
-    font-size:12px;
+    background:#030712;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.055);
 }
 
 .topbar-inner{
-    min-height:36px;
+    min-height:34px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    color:#71849d;
+
+    font-size:11px;
 }
 
 .topbar strong{
-    color:white;
+    color:var(--cyan);
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
-    background:white;
-    border-bottom:1px solid var(--border);
     position:sticky;
     top:0;
+
     z-index:1000;
+
+    background:
+        rgba(5,11,24,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid var(--border);
 }
 
 .navbar{
-    min-height:78px;
+    min-height:74px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
+
+
+/* LOGO */
 
 .logo{
     display:flex;
@@ -111,126 +187,178 @@ header{
     gap:12px;
 }
 
-.logo-mark{
-    width:46px;
-    height:46px;
-    border-radius:13px;
+.logo-icon{
+    width:44px;
+    height:44px;
 
     display:grid;
     place-items:center;
 
-    color:white;
-    font-size:23px;
+    border-radius:13px;
 
     background:
         linear-gradient(
             135deg,
-            var(--blue),
-            var(--purple)
+            var(--cyan),
+            var(--blue)
         );
 
+    color:#03101d;
+
+    font-size:22px;
+
     box-shadow:
-        0 9px 25px rgba(36,107,253,.25);
+        0 0 35px rgba(49,231,255,.25);
 }
 
 .logo-title{
-    font-size:18px;
+    color:white;
+
+    font-size:16px;
     font-weight:850;
-    color:var(--dark);
+
+    line-height:1.2;
 }
 
-.logo-subtitle{
+.logo-sub{
     display:block;
-    font-size:10px;
-    color:#8992a4;
-    font-weight:500;
-    margin-top:-3px;
+
+    color:#6d819c;
+
+    font-size:9px;
+
+    margin-top:2px;
 }
+
+
+/* NAVIGATION */
 
 nav{
     display:flex;
     align-items:center;
-    gap:27px;
+    gap:7px;
 }
 
 nav a{
-    color:#536077;
-    font-size:13px;
-    font-weight:700;
+    padding:9px 13px;
+
+    border-radius:8px;
+
+    color:#91a4bd;
+
+    font-size:12px;
+    font-weight:750;
+
+    transition:.25s;
 }
 
 nav a:hover{
-    color:var(--blue);
-}
-
-.help-button{
-    padding:11px 18px;
-    border-radius:9px;
-
-    background:var(--blue);
     color:white;
 
+    background:
+        rgba(49,231,255,.07);
+}
+
+.nav-button{
+    color:#03101d !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
     box-shadow:
-        0 7px 20px rgba(36,107,253,.2);
+        0 8px 25px rgba(33,150,255,.18);
+}
+
+.nav-button:hover{
+    transform:translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #71f1ff,
+            #319cff
+        );
 }
 
 .menu{
     display:none;
+
     border:0;
+
     background:none;
+
+    color:white;
+
     font-size:27px;
-    color:var(--dark);
+
     cursor:pointer;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:105px 0 90px;
+
     background:
         linear-gradient(
             135deg,
-            #eef5ff 0%,
-            #f8f5ff 52%,
-            #fff5f0 100%
+            #061126,
+            #081a35 48%,
+            #06101f
         );
-
-    padding:85px 0 75px;
-
-    overflow:hidden;
-    position:relative;
 }
 
 .hero::before{
     content:"";
+
     position:absolute;
 
-    width:280px;
-    height:280px;
+    width:520px;
+    height:520px;
 
     border-radius:50%;
 
-    background:#dbe8ff;
+    background:
+        radial-gradient(
+            circle,
+            rgba(49,231,255,.14),
+            transparent 65%
+        );
 
-    right:-100px;
-    top:-100px;
+    top:-280px;
+    right:-160px;
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
 
-    width:200px;
-    height:200px;
+    width:380px;
+    height:380px;
 
     border-radius:50%;
 
-    background:#ffe0d7;
+    background:
+        radial-gradient(
+            circle,
+            rgba(118,103,255,.10),
+            transparent 65%
+        );
 
-    left:-80px;
-    bottom:-80px;
+    bottom:-220px;
+    left:10%;
 }
 
 .hero-grid{
@@ -238,66 +366,112 @@ nav a:hover{
     z-index:2;
 
     display:grid;
-    grid-template-columns:1.15fr .85fr;
 
-    align-items:center;
+    grid-template-columns:
+        1.05fr .95fr;
 
     gap:70px;
+
+    align-items:center;
 }
 
-.hero-content{
-    max-width:650px;
-}
 
-.eyebrow{
-    display:inline-block;
+/* HERO CONTENT */
 
-    padding:7px 12px;
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
 
-    border-radius:7px;
+    padding:7px 13px;
 
-    background:#e3edff;
-    color:var(--blue);
+    border-radius:100px;
 
-    font-size:11px;
-    font-weight:850;
+    color:var(--cyan);
 
-    text-transform:uppercase;
+    background:
+        rgba(49,231,255,.055);
+
+    border:
+        1px solid rgba(49,231,255,.18);
+
+    font-size:10px;
+    font-weight:900;
+
     letter-spacing:1.4px;
 
-    margin-bottom:18px;
+    text-transform:uppercase;
+
+    margin-bottom:19px;
+}
+
+.badge::before{
+    content:"";
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan);
 }
 
 .hero h1{
-    font-size:clamp(42px,5vw,65px);
-    line-height:1.05;
-    letter-spacing:-2.5px;
+    color:white;
 
-    color:var(--dark);
+    font-size:
+        clamp(42px,5.2vw,68px);
 
-    margin-bottom:20px;
+    line-height:1.02;
+
+    letter-spacing:-3px;
+
+    margin-bottom:22px;
 }
 
 .hero h1 span{
-    color:var(--blue);
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue),
+            #a28cff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
 }
 
 .hero p{
+    max-width:680px;
+
     color:var(--muted);
-    font-size:17px;
-    max-width:600px;
+
+    font-size:15px;
+
+    line-height:1.85;
 }
 
 .hero-actions{
     display:flex;
-    gap:12px;
     flex-wrap:wrap;
 
-    margin-top:28px;
+    gap:12px;
+
+    margin-top:30px;
 }
+
+
+/* BUTTONS */
 
 .btn{
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
 
@@ -305,502 +479,915 @@ nav a:hover{
 
     border-radius:9px;
 
-    font-size:13px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:850;
 
-    transition:.25s;
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
 }
 
 .btn-primary{
-    background:var(--blue);
-    color:white;
+    color:#03101d;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
 
     box-shadow:
-        0 10px 25px rgba(36,107,253,.22);
+        0 15px 35px rgba(33,150,255,.2);
 }
 
 .btn-primary:hover{
     transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 40px rgba(33,150,255,.3);
 }
 
-.btn-light{
-    background:white;
-    color:var(--dark);
+.btn-secondary{
+    color:#d8e8fa;
 
-    border:1px solid var(--border);
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid var(--border);
 }
 
-.btn-light:hover{
-    border-color:#bdc7d8;
+.btn-secondary:hover{
+    transform:translateY(-3px);
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-color:
+        rgba(49,231,255,.28);
 }
 
 
-/* HERO ILLUSTRATION */
+/* =========================================================
+   HERO DASHBOARD CARD
+========================================================= */
 
-.hero-art{
+.hero-card{
     position:relative;
-}
 
-.game-panel{
-    background:white;
-
-    border:1px solid var(--border);
+    padding:23px;
 
     border-radius:24px;
 
-    padding:25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,69,118,.5),
+            rgba(8,20,40,.75)
+        );
+
+    border:
+        1px solid rgba(96,195,255,.19);
 
     box-shadow:var(--shadow);
 
-    transform:rotate(2deg);
+    transform:rotate(1.5deg);
+
+    backdrop-filter:blur(15px);
 }
 
-.panel-header{
+.hero-card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(49,231,255,.06),
+            transparent 45%
+        );
+
+    pointer-events:none;
+}
+
+.hero-card-header{
+    position:relative;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
-.panel-title{
-    font-size:14px;
+.hero-card-title{
+    color:white;
+
+    font-size:13px;
     font-weight:850;
 }
 
-.panel-dots{
+.dots{
     display:flex;
     gap:5px;
 }
 
-.panel-dots span{
+.dots span{
     width:7px;
     height:7px;
+
     border-radius:50%;
-    background:#d8dce5;
+
+    background:#35516d;
 }
 
-.game-tile-grid{
+.dots span:first-child{
+    background:#ff5f57;
+}
+
+.dots span:nth-child(2){
+    background:#ffbd2e;
+}
+
+.dots span:last-child{
+    background:#28c840;
+}
+
+.help-box-grid{
+    position:relative;
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:11px;
 }
 
-.game-tile{
+.help-box{
     min-height:115px;
 
-    border-radius:15px;
+    padding:16px;
 
     display:flex;
     flex-direction:column;
-
     justify-content:flex-end;
 
-    padding:15px;
+    border-radius:15px;
 
     color:white;
+
+    border:
+        1px solid rgba(255,255,255,.09);
 
     overflow:hidden;
 
     position:relative;
-}
-
-.game-tile strong{
-    font-size:14px;
-    position:relative;
-    z-index:2;
-}
-
-.game-tile small{
-    opacity:.8;
-    font-size:10px;
-    position:relative;
-    z-index:2;
-}
-
-.tile-one{
-    background:
-        linear-gradient(135deg,#4b82ff,#7853e8);
-}
-
-.tile-two{
-    background:
-        linear-gradient(135deg,#ff7658,#ffae58);
-}
-
-.tile-three{
-    background:
-        linear-gradient(135deg,#18b998,#25c8d7);
-}
-
-.tile-four{
-    background:
-        linear-gradient(135deg,#8e55e9,#d05ce9);
-}
-
-
-/* =========================
-   NOTICE
-========================= */
-
-.notice{
-    margin-top:28px;
-
-    padding:16px 20px;
-
-    background:#fff9e9;
-
-    border:1px solid #f5e1a5;
-
-    border-radius:10px;
-
-    color:#6c5c32;
-
-    font-size:12px;
-}
-
-.notice strong{
-    color:#a47b00;
-}
-
-
-/* =========================
-   POPULAR TOPICS
-========================= */
-
-.section{
-    padding:90px 0;
-}
-
-.heading{
-    margin-bottom:42px;
-}
-
-.heading.center{
-    text-align:center;
-    max-width:700px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.heading small{
-    color:var(--blue);
-    font-size:11px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-}
-
-.heading h2{
-    font-size:clamp(30px,4vw,43px);
-    line-height:1.15;
-    margin:8px 0 12px;
-    color:var(--dark);
-}
-
-.heading p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-
-/* TOPIC GRID */
-
-.topic-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:17px;
-}
-
-.topic{
-    padding:25px 20px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    box-shadow:
-        0 5px 20px rgba(31,48,83,.035);
 
     transition:.25s;
 }
 
-.topic:hover{
-    transform:translateY(-5px);
-
-    border-color:#cbd8f6;
-
-    box-shadow:var(--shadow);
+.help-box:hover{
+    transform:translateY(-4px);
 }
 
-.topic-icon{
-    width:45px;
-    height:45px;
+.help-box::before{
+    content:"";
 
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.12);
+
+    filter:blur(20px);
+
+    top:-45px;
+    right:-35px;
+}
+
+.help-box strong{
+    position:relative;
+
+    font-size:13px;
+}
+
+.help-box small{
+    position:relative;
+
+    color:rgba(255,255,255,.68);
+
+    font-size:9px;
+}
+
+.h1{
+    background:
+        linear-gradient(
+            135deg,
+            #0874d8,
+            #12b8e8
+        );
+}
+
+.h2{
+    background:
+        linear-gradient(
+            135deg,
+            #263d91,
+            #6875e8
+        );
+}
+
+.h3{
+    background:
+        linear-gradient(
+            135deg,
+            #087d8d,
+            #12c7c9
+        );
+}
+
+.h4{
+    background:
+        linear-gradient(
+            135deg,
+            #343d88,
+            #855fe8
+        );
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice{
+    margin-top:25px;
+
+    padding:16px 19px;
+
+    border-radius:12px;
+
+    background:
+        rgba(49,231,255,.035);
+
+    border:
+        1px solid rgba(49,231,255,.12);
+
+    color:#8398b0;
+
+    font-size:11px;
+}
+
+.notice strong{
+    color:var(--cyan);
+}
+
+
+/* =========================================================
+   ARTICLE AREA
+========================================================= */
+
+.article-area{
+    padding:90px 0;
+}
+
+.article-layout{
     display:grid;
-    place-items:center;
 
-    border-radius:11px;
+    grid-template-columns:245px 1fr;
 
-    margin-bottom:17px;
+    gap:42px;
 
-    font-size:20px;
-}
-
-.blue{
-    background:#e9f1ff;
-}
-
-.orange{
-    background:#fff0eb;
-}
-
-.green{
-    background:#e6faf4;
-}
-
-.purple{
-    background:#f0eaff;
-}
-
-.topic h3{
-    font-size:15px;
-    margin-bottom:7px;
-}
-
-.topic p{
-    color:var(--muted);
-    font-size:12px;
-}
-
-
-/* =========================
-   TWO COLUMN SUPPORT
-========================= */
-
-.support-section{
-    background:var(--light);
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-}
-
-.support-layout{
-    display:grid;
-    grid-template-columns:.75fr 1.25fr;
-    gap:55px;
     align-items:start;
 }
 
-.support-list{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+
+/* =========================================================
+   ARTICLE NAVIGATION
+========================================================= */
+
+.article-nav{
+    position:sticky;
+
+    top:94px;
+
+    padding:20px;
+
+    border-radius:17px;
+
+    background:
+        rgba(10,24,47,.65);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.18);
+
+    backdrop-filter:blur(15px);
 }
 
-.support-item{
+.article-nav-title{
+    color:var(--cyan);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:14px;
+}
+
+.article-nav a{
+    position:relative;
+
+    display:block;
+
+    padding:9px 10px 9px 15px;
+
+    margin-bottom:3px;
+
+    border-radius:7px;
+
+    color:#7f94ad;
+
+    font-size:11px;
+
+    transition:.25s;
+}
+
+.article-nav a::before{
+    content:"";
+
+    position:absolute;
+
+    left:3px;
+    top:50%;
+
+    width:3px;
+    height:0;
+
+    transform:translateY(-50%);
+
+    border-radius:5px;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan);
+
+    transition:.25s;
+}
+
+.article-nav a:hover{
+    color:white;
+
+    background:
+        rgba(49,231,255,.055);
+
+    padding-left:19px;
+}
+
+.article-nav a:hover::before{
+    height:18px;
+}
+
+
+/* =========================================================
+   ARTICLE
+========================================================= */
+
+.article{
+    min-width:0;
+}
+
+.article-header{
+    padding-bottom:32px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    margin-bottom:28px;
+}
+
+.article-label{
+    color:var(--cyan);
+
+    font-size:10px;
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.6px;
+}
+
+.article-header h2{
+    color:white;
+
+    font-size:
+        clamp(30px,4vw,45px);
+
+    line-height:1.12;
+
+    margin:8px 0 14px;
+}
+
+.article-intro{
+    color:#879bb3;
+
+    font-size:14px;
+
+    max-width:800px;
+}
+
+
+/* =========================================================
+   ARTICLE SECTIONS
+========================================================= */
+
+.article-section{
+    position:relative;
+
+    padding:34px 30px;
+
+    margin-bottom:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,34,65,.78),
+            rgba(7,19,37,.78)
+        );
+
+    border:
+        1px solid rgba(86,180,255,.12);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.15);
+
+    scroll-margin-top:100px;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.article-section::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(33,150,255,.035);
+
+    filter:blur(25px);
+
+    right:-100px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+.article-section:hover{
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(49,231,255,.25);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.22);
+}
+
+.section-number{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:38px;
+    height:26px;
+
+    padding:0 9px;
+
+    margin-bottom:10px;
+
+    border-radius:7px;
+
+    color:#03101d;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    font-size:10px;
+    font-weight:900;
+
+    box-shadow:
+        0 7px 18px rgba(33,150,255,.18);
+}
+
+.article-section h3{
+    color:white;
+
+    font-size:25px;
+
+    line-height:1.3;
+
+    margin-bottom:14px;
+}
+
+.article-section h4{
+    color:var(--cyan);
+
+    font-size:15px;
+
+    margin:22px 0 8px;
+}
+
+.article-section p{
+    color:#899db5;
+
+    font-size:13px;
+
+    line-height:1.85;
+
+    margin-bottom:13px;
+}
+
+.article-section ul{
+    padding-left:20px;
+
+    color:#899db5;
+
+    font-size:13px;
+}
+
+.article-section li{
+    margin-bottom:8px;
+}
+
+
+/* =========================================================
+   CALLOUT
+========================================================= */
+
+.callout{
+    padding:19px 20px;
+
+    margin:22px 0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(49,231,255,.055),
+            rgba(33,150,255,.02)
+        );
+
+    border-left:
+        3px solid var(--cyan);
+
+    color:#9bacc0;
+
+    font-size:12px;
+}
+
+.callout strong{
+    color:var(--cyan);
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps{
+    display:grid;
+
+    gap:11px;
+
+    margin-top:18px;
+}
+
+.step{
     display:flex;
+
     gap:14px;
 
-    padding:17px;
+    padding:16px;
 
-    background:white;
+    background:
+        rgba(255,255,255,.025);
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius:11px;
+
+    transition:.25s;
 }
 
-.support-number{
-    min-width:30px;
-    height:30px;
+.step:hover{
+    background:
+        rgba(49,231,255,.035);
+
+    border-color:
+        rgba(49,231,255,.17);
+}
+
+.step-number{
+    min-width:31px;
+    height:31px;
 
     display:grid;
     place-items:center;
 
     border-radius:8px;
 
-    background:#eaf1ff;
-    color:var(--blue);
+    color:#03101d;
 
-    font-size:12px;
-    font-weight:900;
-}
-
-.support-item h3{
-    font-size:14px;
-    margin-bottom:4px;
-}
-
-.support-item p{
-    color:var(--muted);
-    font-size:12px;
-}
-
-
-/* INFO BOX */
-
-.info-box{
-    background:var(--dark);
-    color:white;
-
-    padding:35px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 18px 40px rgba(24,32,51,.15);
-}
-
-.info-box .tag{
-    color:#8fb2ff;
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
 
     font-size:10px;
     font-weight:900;
-
-    letter-spacing:1.5px;
-    text-transform:uppercase;
 }
 
-.info-box h2{
-    font-size:29px;
-    line-height:1.2;
-    margin:10px 0 14px;
-}
+.step strong{
+    display:block;
 
-.info-box > p{
-    color:#aeb7ca;
+    color:white;
+
     font-size:13px;
+
+    margin-bottom:3px;
 }
 
-.info-points{
-    margin-top:24px;
-
-    display:grid;
-    gap:13px;
-}
-
-.info-point{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-
-    font-size:12px;
-    color:#dce1eb;
-}
-
-.check{
-    width:21px;
-    height:21px;
-
-    display:grid;
-    place-items:center;
-
-    flex:none;
-
-    border-radius:50%;
-
-    background:#203a72;
-    color:#83aaff;
+.step p{
+    margin:0;
 
     font-size:11px;
 }
 
 
-/* =========================
-   WHAT TO COLLECT
-========================= */
+/* =========================================================
+   TROUBLESHOOTING
+========================================================= */
 
-.collect-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.troubleshooting{
+    padding:90px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071326,
+            #050d1c
+        );
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
 }
 
-.collect-card{
+.section-heading{
+    max-width:720px;
+
+    text-align:center;
+
+    margin:0 auto 42px;
+}
+
+.section-heading small{
+    color:var(--cyan);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:1.6px;
+
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    color:white;
+
+    font-size:
+        clamp(29px,4vw,43px);
+
+    line-height:1.15;
+
+    margin:8px 0 12px;
+}
+
+.section-heading p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.trouble-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.trouble-card{
+    position:relative;
+
     padding:25px;
 
-    border:1px solid var(--border);
+    border-radius:16px;
 
-    border-radius:15px;
+    background:
+        rgba(255,255,255,.028);
 
-    background:white;
+    border:
+        1px solid var(--border);
+
+    overflow:hidden;
+
+    transition:.3s;
 }
 
-.collect-card strong{
-    display:block;
+.trouble-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:
+        rgba(49,231,255,.045);
+
+    filter:blur(25px);
+
+    right:-50px;
+    bottom:-50px;
+}
+
+.trouble-card:hover{
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(49,231,255,.25);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.2);
+}
+
+.trouble-icon{
+    width:45px;
+    height:45px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49,231,255,.13),
+            rgba(33,150,255,.07)
+        );
+
+    border:
+        1px solid rgba(49,231,255,.12);
+
+    margin-bottom:14px;
+
+    font-size:20px;
+}
+
+.trouble-card h3{
+    color:white;
+
     font-size:15px;
+
     margin-bottom:7px;
 }
 
-.collect-card p{
+.trouble-card p{
     color:var(--muted);
+
     font-size:12px;
 }
 
 
-/* =========================
+/* =========================================================
    FAQ
-========================= */
+========================================================= */
 
 .faq-section{
-    background:#fafbfe;
+    padding:90px 0;
 }
 
 .faq{
     max-width:850px;
+
     margin:auto;
 }
 
-.faq-row{
-    background:white;
+.faq details{
+    margin-bottom:9px;
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius:11px;
 
-    margin-bottom:10px;
+    background:
+        rgba(255,255,255,.025);
 
     overflow:hidden;
+
+    transition:.25s;
 }
 
-.faq-row summary{
-    padding:19px 21px;
+.faq details:hover{
+    border-color:
+        rgba(49,231,255,.2);
+}
 
-    list-style:none;
+.faq summary{
+    position:relative;
 
     cursor:pointer;
 
+    list-style:none;
+
+    padding:18px 20px;
+
+    padding-right:50px;
+
+    color:white;
+
     font-size:13px;
     font-weight:800;
-
-    position:relative;
-
-    padding-right:45px;
 }
 
-.faq-row summary::-webkit-details-marker{
+.faq summary::-webkit-details-marker{
     display:none;
 }
 
-.faq-row summary::after{
+.faq summary::after{
     content:"+";
 
     position:absolute;
+
     right:20px;
 
-    color:var(--blue);
+    color:var(--cyan);
 
     font-size:19px;
 }
 
-.faq-row[open] summary::after{
+.faq details[open] summary::after{
     content:"−";
 }
 
 .faq-answer{
-    padding:0 21px 20px;
+    padding:0 20px 19px;
 
     color:var(--muted);
 
@@ -808,9 +1395,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    CTA
-========================= */
+========================================================= */
 
 .cta{
     padding:85px 0;
@@ -818,25 +1405,28 @@ nav a:hover{
 
 .cta-box{
     position:relative;
+
     overflow:hidden;
 
-    padding:60px 30px;
-
-    border-radius:23px;
-
     text-align:center;
+
+    padding:70px 25px;
+
+    border-radius:25px;
 
     background:
         linear-gradient(
             135deg,
-            #246bfd,
-            #7547e8
+            #075b9c,
+            #087fbd 45%,
+            #4b4bc1
         );
 
-    color:white;
+    border:
+        1px solid rgba(100,220,255,.2);
 
     box-shadow:
-        0 20px 50px rgba(36,107,253,.2);
+        0 30px 80px rgba(0,0,0,.3);
 }
 
 .cta-box::before{
@@ -844,123 +1434,171 @@ nav a:hover{
 
     position:absolute;
 
-    width:260px;
-    height:260px;
+    width:350px;
+    height:350px;
 
     border-radius:50%;
 
     background:
-        rgba(255,255,255,.10);
+        rgba(49,231,255,.18);
 
-    right:-100px;
-    top:-130px;
+    filter:blur(30px);
+
+    top:-240px;
+    left:-100px;
+}
+
+.cta-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        rgba(118,103,255,.2);
+
+    filter:blur(35px);
+
+    bottom:-230px;
+    right:-80px;
+}
+
+.cta-box h2,
+.cta-box p,
+.cta-box a{
+    position:relative;
+
+    z-index:2;
 }
 
 .cta-box h2{
-    position:relative;
+    color:white;
 
-    font-size:clamp(30px,4vw,43px);
+    font-size:
+        clamp(30px,4vw,43px);
 
-    margin-bottom:12px;
+    margin-bottom:11px;
 }
 
 .cta-box p{
-    position:relative;
-
     max-width:650px;
 
     margin:0 auto 25px;
 
-    color:#dbe5ff;
+    color:#d2efff;
 
     font-size:13px;
 }
 
 .cta-box .btn{
-    position:relative;
-
     background:white;
-    color:var(--blue);
+
+    color:#075b9c;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.15);
+}
+
+.cta-box .btn:hover{
+    transform:translateY(-3px);
+
+    background:#f3fcff;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
-    background:#111725;
+    background:#020610;
 
-    color:white;
+    padding:48px 0 20px;
 
-    padding:48px 0 22px;
+    border-top:
+        1px solid var(--border);
 }
 
 .footer-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:40px;
+
+    gap:30px;
 }
 
 .footer-title{
-    font-size:18px;
+    color:white;
+
+    font-size:17px;
     font-weight:850;
-    margin-bottom:9px;
+
+    margin-bottom:8px;
 }
 
 .footer-text{
-    color:#8f99ad;
-    max-width:500px;
-    font-size:12px;
-}
+    color:#647890;
 
-.footer-right{
-    text-align:right;
+    font-size:11px;
+
+    max-width:520px;
 }
 
 .footer-links{
     display:flex;
+
     justify-content:flex-end;
+
     gap:20px;
+
     flex-wrap:wrap;
 }
 
 .footer-links a{
-    color:#aeb7c9;
-    font-size:12px;
+    color:#7b8fa7;
+
+    font-size:11px;
+
+    transition:.2s;
 }
 
 .footer-links a:hover{
-    color:white;
+    color:var(--cyan);
 }
 
 .footer-bottom{
-    margin-top:35px;
-    padding-top:18px;
+    margin-top:30px;
 
-    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:17px;
+
+    border-top:
+        1px solid rgba(255,255,255,.05);
 
     text-align:center;
 
-    color:#697286;
+    color:#46576c;
 
-    font-size:10px;
+    font-size:9px;
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
-@media(max-width:950px){
+@media(max-width:1000px){
 
     .hero-grid{
         grid-template-columns:1fr;
-        gap:40px;
     }
 
     .hero-content{
         text-align:center;
+
         margin:auto;
     }
 
@@ -972,34 +1610,33 @@ footer{
         justify-content:center;
     }
 
-    .hero-art{
-        max-width:550px;
+    .hero-card{
+        max-width:600px;
+
         width:100%;
+
         margin:auto;
     }
 
-    .topic-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .support-layout{
+    .article-layout{
         grid-template-columns:1fr;
     }
 
-    .collect-grid{
-        grid-template-columns:1fr 1fr;
+    .article-nav{
+        position:relative;
+
+        top:0;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr;
+    .article-nav a{
+        display:inline-block;
+
+        margin-right:3px;
     }
 
-    .footer-right{
-        text-align:left;
-    }
-
-    .footer-links{
-        justify-content:flex-start;
+    .trouble-grid{
+        grid-template-columns:
+            1fr 1fr;
     }
 
     nav{
@@ -1007,18 +1644,22 @@ footer{
 
         position:absolute;
 
+        top:74px;
         left:0;
-        top:78px;
 
         width:100%;
 
         padding:20px;
 
-        background:white;
-
-        border-bottom:1px solid var(--border);
-
         flex-direction:column;
+
+        background:
+            rgba(5,13,28,.97);
+
+        backdrop-filter:blur(20px);
+
+        border-bottom:
+            1px solid var(--border);
     }
 
     nav.active{
@@ -1027,6 +1668,7 @@ footer{
 
     nav a{
         width:100%;
+
         text-align:center;
     }
 
@@ -1036,7 +1678,7 @@ footer{
 }
 
 
-@media(max-width:620px){
+@media(max-width:650px){
 
     .container{
         width:calc(100% - 28px);
@@ -1044,36 +1686,18 @@ footer{
 
     .topbar-inner{
         justify-content:center;
-        text-align:center;
     }
 
     .topbar-inner span{
         display:none;
     }
 
-    .navbar{
-        min-height:68px;
-    }
-
-    .logo-title{
-        font-size:16px;
-    }
-
-    .logo-mark{
-        width:38px;
-        height:38px;
-    }
-
     .hero{
-        padding:65px 0;
+        padding:72px 0;
     }
 
     .hero h1{
-        letter-spacing:-1px;
-    }
-
-    .hero p{
-        font-size:15px;
+        letter-spacing:-1.5px;
     }
 
     .hero-actions{
@@ -1084,58 +1708,96 @@ footer{
         width:100%;
     }
 
-    .topic-grid{
-        grid-template-columns:1fr;
-    }
-
-    .collect-grid{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:65px 0;
-    }
-
-    .game-panel{
+    .hero-card{
         transform:none;
     }
 
-    .game-tile{
-        min-height:100px;
-    }
-
-    .info-box{
-        padding:27px;
-    }
-
-    .cta{
+    .article-area,
+    .troubleshooting,
+    .faq-section{
         padding:65px 0;
     }
 
-    .cta-box{
-        padding:48px 20px;
+    .article-nav a{
+        display:block;
+    }
+
+    .article-section{
+        padding:25px 20px;
+
+        border-radius:14px;
+    }
+
+    .article-section h3{
+        font-size:21px;
+    }
+
+    .article-section p{
+        font-size:12px;
+    }
+
+    .trouble-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-links{
+        justify-content:flex-start;
+    }
+}
+
+
+/* =========================================================
+   SMALL SCREEN HERO CARD
+========================================================= */
+
+@media(max-width:420px){
+
+    .help-box-grid{
+        grid-template-columns:1fr;
+    }
+
+    .help-box{
+        min-height:90px;
+    }
+
+    .logo-sub{
+        display:none;
+    }
+
+    .logo-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .logo-title{
+        font-size:14px;
     }
 }
 
 </style>
 </head>
 
-
 <body>
 
 
-<!-- TOP BAR -->
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
 <div class="topbar">
 
     <div class="container topbar-inner">
 
         <strong>
-            Big Fish Games Help Center
+            Big Fish Games Support Center
         </strong>
 
         <span>
-            Independent support information
+            Help Guides • Troubleshooting • FAQs
         </span>
 
     </div>
@@ -1143,8 +1805,9 @@ footer{
 </div>
 
 
-
-<!-- HEADER -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -1152,18 +1815,18 @@ footer{
 
         <a href="#home" class="logo">
 
-            <div class="logo-mark">
+            <div class="logo-icon">
                 🐟
             </div>
 
             <div>
 
                 <div class="logo-title">
-                    Big Fish Games Help
+                    Big Fish Support
                 </div>
 
-                <span class="logo-subtitle">
-                    Guides & Troubleshooting
+                <span class="logo-sub">
+                    Help & Troubleshooting
                 </span>
 
             </div>
@@ -1186,14 +1849,22 @@ footer{
                 Home
             </a>
 
-           
+            <a href="#article-section">
+                Articles
+            </a>
+
+            <a href="#troubleshooting">
+                Troubleshooting
+            </a>
 
             <a href="#faq">
                 FAQ
             </a>
 
-            <a href="
-https://arsresolution.com/" class="help-button">
+            <a
+                href="https://arsresolution.com/"
+                class="nav-button"
+            >
                 Get Help
             </a>
 
@@ -1204,38 +1875,35 @@ https://arsresolution.com/" class="help-button">
 </header>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<!-- HERO -->
-
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="container hero-grid">
 
-
         <div class="hero-content">
 
-            <div class="eyebrow">
-                Player Help Center
+            <div class="badge">
+                Player Support Guide
             </div>
 
-
             <h1>
-
-                Having trouble with a
-                <span>game?</span>
-
+                Big Fish Games
+                <span>Support</span>
+                Center
             </h1>
 
-
             <p>
-
-                Find practical information for common
-                Big Fish Games problems, including downloads,
-                installations, account access, purchases,
-                updates, and game errors.
-
+                Find helpful information for common Big Fish Games
+                questions, including account access, password
+                recovery, downloads, installation, updates,
+                purchases and game troubleshooting.
             </p>
-
 
             <div class="hero-actions">
 
@@ -1243,14 +1911,15 @@ https://arsresolution.com/" class="help-button">
                     href="https://arsresolution.com/"
                     class="btn btn-primary"
                 >
-                    Browse Help Topics
+                    Explore Support Articles
                 </a>
 
                 <a
-                    href="https://getchatsupport.net/"
-                    class="btn btn-light"
+                    href="https://getchatsupport.net/
+"
+                    class="btn btn-secondary"
                 >
-                    Troubleshooting Guide
+                    Troubleshoot a Problem
                 </a>
 
             </div>
@@ -1258,82 +1927,73 @@ https://arsresolution.com/" class="help-button">
         </div>
 
 
+        <div class="hero-card">
 
-        <!-- VISUAL -->
+            <div class="hero-card-header">
 
-        <div class="hero-art">
+                <div class="hero-card-title">
+                    Popular Help Areas
+                </div>
 
-            <div class="game-panel">
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-                <div class="panel-header">
+            </div>
 
-                    <div class="panel-title">
-                        Popular Help Areas
-                    </div>
 
-                    <div class="panel-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+            <div class="help-box-grid">
+
+                <div class="help-box h1">
+
+                    <strong>
+                        Downloads
+                    </strong>
+
+                    <small>
+                        Download assistance
+                    </small>
 
                 </div>
 
 
-                <div class="game-tile-grid">
+                <div class="help-box h2">
+
+                    <strong>
+                        Accounts
+                    </strong>
+
+                    <small>
+                        Login & password
+                    </small>
+
+                </div>
 
 
-                    <div class="game-tile tile-one">
+                <div class="help-box h3">
 
-                        <strong>
-                            Downloads
-                        </strong>
+                    <strong>
+                        Updates
+                    </strong>
 
-                        <small>
-                            Installation help
-                        </small>
+                    <small>
+                        Game maintenance
+                    </small>
 
-                    </div>
-
-
-                    <div class="game-tile tile-two">
-
-                        <strong>
-                            Accounts
-                        </strong>
-
-                        <small>
-                            Sign-in information
-                        </small>
-
-                    </div>
+                </div>
 
 
-                    <div class="game-tile tile-three">
+                <div class="help-box h4">
 
-                        <strong>
-                            Updates
-                        </strong>
+                    <strong>
+                        Game Errors
+                    </strong>
 
-                        <small>
-                            Game maintenance
-                        </small>
-
-                    </div>
-
-
-                    <div class="game-tile tile-four">
-
-                        <strong>
-                            Game Errors
-                        </strong>
-
-                        <small>
-                            Troubleshooting
-                        </small>
-
-                    </div>
-
+                    <small>
+                        Troubleshooting
+                    </small>
 
                 </div>
 
@@ -1346,124 +2006,892 @@ https://arsresolution.com/" class="help-button">
 </section>
 
 
-
-<!-- NOTICE -->
+<!-- =====================================================
+     NOTICE
+===================================================== -->
 
 <div class="container">
 
     <div class="notice">
 
-        <strong>Important:</strong>
+        <strong>
+            Important:
+        </strong>
 
-        This is an independent informational website.
-        It is not affiliated with, sponsored by, or officially
-        connected with Big Fish Games. Use official support
-        resources for account-specific assistance.
+        This website provides general informational content.
+        For account-specific, billing, purchase or other
+        official matters, use the current official Big Fish
+        Games support resources.
 
     </div>
 
 </div>
 
 
+<!-- =====================================================
+     ARTICLE AREA
+===================================================== -->
 
-<!-- POPULAR TOPICS -->
+<section
+    class="article-area"
+    id="article"
+>
 
-<section class="section" id="topics">
+    <div class="container article-layout">
+
+
+        <!-- ARTICLE NAV -->
+
+        <aside class="article-nav">
+
+            <div class="article-nav-title">
+                Explore Support Articles
+            </div>
+
+            <a href="#overview">
+                Big Fish Support Overview
+            </a>
+
+            <a href="#account">
+                Account & Login Help
+            </a>
+
+            <a href="#password">
+                Password Recovery
+            </a>
+
+            <a href="#downloads">
+                Download Problems
+            </a>
+
+            <a href="#installation">
+                Installation Issues
+            </a>
+
+            <a href="#updates">
+                Game Updates
+            </a>
+
+            <a href="#errors">
+                Game Errors & Crashes
+            </a>
+
+            <a href="#purchases">
+                Purchases & Billing
+            </a>
+
+            <a href="#refunds">
+                Refund Information
+            </a>
+
+            <a href="#contact">
+                Contact Support
+            </a>
+
+            <a href="#checklist">
+                Support Checklist
+            </a>
+
+        </aside>
+
+
+        <!-- ARTICLE -->
+
+        <article class="article">
+
+
+            <div class="article-header">
+
+                <div class="article-label">
+                    Big Fish Support Guide
+                </div>
+
+                <h2>
+                    How to Get Help With Big Fish Games
+                </h2>
+
+                <p class="article-intro">
+                    Whether you are unable to sign in, download
+                    a game, install an update or launch a title,
+                    this guide provides general information to
+                    help you identify common problems and prepare
+                    for technical assistance.
+                </p>
+
+            </div>
+
+
+            <!-- 01 -->
+
+            <section
+                class="article-section"
+                id="overview"
+            >
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <h3>
+                    Big Fish Games Support Overview
+                </h3>
+
+                <p>
+                    Big Fish Games players may encounter different
+                    types of problems while using games or account
+                    services. Issues can occur while signing in,
+                    downloading a game, installing software,
+                    updating a title or launching a game.
+                </p>
+
+                <p>
+                    Identifying exactly when the problem occurs is
+                    one of the easiest ways to begin troubleshooting.
+                    Note what you were doing immediately before the
+                    issue appeared.
+                </p>
+
+                <div class="callout">
+
+                    <strong>
+                        Helpful tip:
+                    </strong>
+
+                    Keep the game title, device information and
+                    exact error message available when seeking
+                    assistance.
+
+                </div>
+
+            </section>
+
+
+            <!-- 02 -->
+
+            <section
+                class="article-section"
+                id="account"
+            >
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h3>
+                    Account & Login Help
+                </h3>
+
+                <p>
+                    Account problems may prevent access to games
+                    or other account features. Start by checking
+                    that the email address entered during sign-in
+                    is correct.
+                </p>
+
+                <h4>
+                    Things to check
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Confirm that the account email is entered
+                        correctly.
+                    </li>
+
+                    <li>
+                        Check that your internet connection is
+                        working.
+                    </li>
+
+                    <li>
+                        Restart the application and try again.
+                    </li>
+
+                    <li>
+                        Use the available account recovery process
+                        if necessary.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- 03 -->
+
+            <section
+                class="article-section"
+                id="password"
+            >
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h3>
+                    Password Recovery
+                </h3>
+
+                <p>
+                    If you cannot remember your account password,
+                    use the password recovery option provided on
+                    the account sign-in page.
+                </p>
+
+                <p>
+                    Follow the recovery instructions carefully and
+                    make sure you are using the email address
+                    associated with the account.
+                </p>
+
+                <div class="callout">
+
+                    <strong>
+                        Security reminder:
+                    </strong>
+
+                    Never share your password, verification codes
+                    or private account credentials with another
+                    person.
+
+                </div>
+
+            </section>
+
+
+            <!-- 04 -->
+
+            <section
+                class="article-section"
+                id="downloads"
+            >
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <h3>
+                    Big Fish Games Download Problems
+                </h3>
+
+                <p>
+                    Download problems can occur because of an
+                    unstable internet connection, insufficient
+                    storage, application issues or temporary
+                    service conditions.
+                </p>
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Check your internet connection
+                            </strong>
+
+                            <p>
+                                Make sure other websites and
+                                services load normally.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Check available storage
+                            </strong>
+
+                            <p>
+                                Make sure enough free space is
+                                available for the game.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Restart the application
+                            </strong>
+
+                            <p>
+                                Close the application completely
+                                and try the download again.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 05 -->
+
+            <section
+                class="article-section"
+                id="installation"
+            >
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <h3>
+                    Installation Issues
+                </h3>
+
+                <p>
+                    If a game downloads successfully but does not
+                    install, check your available storage and
+                    restart the computer or device.
+                </p>
+
+                <h4>
+                    Before trying again
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Close unnecessary applications.
+                    </li>
+
+                    <li>
+                        Check available disk space.
+                    </li>
+
+                    <li>
+                        Restart the device.
+                    </li>
+
+                    <li>
+                        Check for available software updates.
+                    </li>
+
+                    <li>
+                        Record any installation error message.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- 06 -->
+
+            <section
+                class="article-section"
+                id="updates"
+            >
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <h3>
+                    Game Updates
+                </h3>
+
+                <p>
+                    Game updates can contain improvements,
+                    compatibility changes and fixes. Occasionally,
+                    an update may appear to stall or fail.
+                </p>
+
+                <p>
+                    Check your internet connection and available
+                    storage before trying the update again.
+                    Restarting the application can also help with
+                    temporary problems.
+                </p>
+
+                <div class="callout">
+
+                    <strong>
+                        Good practice:
+                    </strong>
+
+                    Avoid repeatedly interrupting an update while
+                    files are being installed.
+
+                </div>
+
+            </section>
+
+
+            <!-- 07 -->
+
+            <section
+                class="article-section"
+                id="errors"
+            >
+
+                <span class="section-number">
+                    07
+                </span>
+
+                <h3>
+                    Game Errors & Crashes
+                </h3>
+
+                <p>
+                    A game may sometimes freeze, crash or display
+                    an error message. Begin with simple checks
+                    before making major changes to the device.
+                </p>
+
+                <h4>
+                    Recommended first steps
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Close and reopen the game.
+                    </li>
+
+                    <li>
+                        Restart your computer or device.
+                    </li>
+
+                    <li>
+                        Check for available game updates.
+                    </li>
+
+                    <li>
+                        Check your internet connection when required.
+                    </li>
+
+                    <li>
+                        Make sure sufficient storage is available.
+                    </li>
+
+                    <li>
+                        Write down the exact error message.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- 08 -->
+
+            <section
+                class="article-section"
+                id="purchases"
+            >
+
+                <span class="section-number">
+                    08
+                </span>
+
+                <h3>
+                    Purchases & Billing
+                </h3>
+
+                <p>
+                    For purchase-related problems, identify the
+                    account and platform used for the transaction.
+                    Keeping the date and relevant transaction
+                    information available can make support
+                    conversations easier.
+                </p>
+
+                <div class="callout">
+
+                    <strong>
+                        Privacy reminder:
+                    </strong>
+
+                    Never publish full payment-card numbers,
+                    passwords or security codes.
+
+                </div>
+
+            </section>
+
+
+            <!-- 09 -->
+
+            <section
+                class="article-section"
+                id="refunds"
+            >
+
+                <span class="section-number">
+                    09
+                </span>
+
+                <h3>
+                    Refund Information
+                </h3>
+
+                <p>
+                    Refund procedures can depend on where a
+                    purchase was made. Purchases made through
+                    another app or distribution platform may be
+                    subject to that platform's applicable
+                    procedures.
+                </p>
+
+                <p>
+                    For account-specific refund questions, check
+                    the current official support information for
+                    the applicable transaction.
+                </p>
+
+            </section>
+
+
+            <!-- 10 -->
+
+            <section
+                class="article-section"
+                id="contact"
+            >
+
+                <span class="section-number">
+                    10
+                </span>
+
+                <h3>
+                    Contacting Big Fish Games Support
+                </h3>
+
+                <p>
+                    If basic troubleshooting does not resolve
+                    your problem, use the appropriate official
+                    Big Fish Games support resources for
+                    account-specific assistance.
+                </p>
+
+                <h4>
+                    Information to prepare
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Game title.
+                    </li>
+
+                    <li>
+                        Device or operating system.
+                    </li>
+
+                    <li>
+                        Short description of the problem.
+                    </li>
+
+                    <li>
+                        Exact error message.
+                    </li>
+
+                    <li>
+                        When the problem started.
+                    </li>
+
+                    <li>
+                        Steps already attempted.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- 11 -->
+
+            <section
+                class="article-section"
+                id="checklist"
+            >
+
+                <span class="section-number">
+                    11
+                </span>
+
+                <h3>
+                    Big Fish Support Checklist
+                </h3>
+
+                <p>
+                    Before requesting assistance, make sure you
+                    have enough information to clearly explain
+                    what is happening.
+                </p>
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Identify the problem
+                            </strong>
+
+                            <p>
+                                Explain exactly what happens and
+                                when it happens.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Record the error
+                            </strong>
+
+                            <p>
+                                Write down the exact error message
+                                whenever possible.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Try basic troubleshooting
+                            </strong>
+
+                            <p>
+                                Restart the application and device,
+                                then check the connection.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Prepare relevant information
+                            </strong>
+
+                            <p>
+                                Have your game and device details
+                                ready.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TROUBLESHOOTING
+===================================================== -->
+
+<section
+    class="troubleshooting"
+    id="troubleshooting"
+>
 
     <div class="container">
 
-
-        <div class="heading center">
+        <div class="section-heading">
 
             <small>
-                Help Library
+                Quick Help
             </small>
 
             <h2>
-                What do you need help with?
+                Common Big Fish Games Problems
             </h2>
 
             <p>
-                Start with one of these common support areas
-                to find useful troubleshooting information.
+                Choose the category that best matches your
+                current problem.
             </p>
 
         </div>
 
 
-        <div class="topic-grid">
+        <div class="trouble-grid">
 
 
-            <article class="topic">
+            <div class="trouble-card">
 
-                <div class="topic-icon blue">
+                <div class="trouble-icon">
                     ⬇️
                 </div>
 
                 <h3>
-                   <a href="" Downloads
+                    Download Not Starting
                 </h3>
 
                 <p>
-                    Learn what to check when a game
-                    download does not start or finish.
+                    Check the internet connection, available
+                    storage and application status before
+                    trying the download again.
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="topic">
+            <div class="trouble-card">
 
-                <div class="topic-icon orange">
-                    🧩
+                <div class="trouble-icon">
+                    🔐
                 </div>
 
                 <h3>
-                    Installation
+                    Cannot Sign In
                 </h3>
 
                 <p>
-                    Review basic steps for games that
-                    fail during installation.
+                    Confirm your account email and use the
+                    available password recovery process when
+                    necessary.
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="topic">
+            <div class="trouble-card">
 
-                <div class="topic-icon green">
-                    🔑
+                <div class="trouble-icon">
+                    🛠️
                 </div>
 
                 <h3>
-                   <a href=""> Account Access</a>
+                    Game Will Not Install
                 </h3>
 
                 <p>
-                    Get general information about
-                    sign-in and password problems.
+                    Check storage, restart the device and
+                    record any installation error.
                 </p>
 
-            </article>
+            </div>
 
 
-            <article class="topic">
+            <div class="trouble-card">
 
-                <div class="topic-icon purple">
+                <div class="trouble-icon">
                     🔄
                 </div>
 
                 <h3>
-                   <a href="https://arsresolution.com/"> Updates</a>
+                    Update Is Stuck
                 </h3>
 
                 <p>
-                    Understand common issues involving
-                    game updates and compatibility.
+                    Check your connection and storage, then
+                    restart the application and try again.
                 </p>
 
-            </article>
+            </div>
+
+
+            <div class="trouble-card">
+
+                <div class="trouble-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Game Shows an Error
+                </h3>
+
+                <p>
+                    Write down the exact error message and
+                    note when the problem occurs.
+                </p>
+
+            </div>
+
+
+            <div class="trouble-card">
+
+                <div class="trouble-icon">
+                    💳
+                </div>
+
+                <h3>
+                    Purchase Question
+                </h3>
+
+                <p>
+                    Identify where the purchase was made and
+                    keep relevant transaction information ready.
+                </p>
+
+            </div>
 
 
         </div>
@@ -1473,317 +2901,29 @@ https://arsresolution.com/" class="help-button">
 </section>
 
 
-
-<!-- TROUBLESHOOTING -->
+<!-- =====================================================
+     FAQ
+===================================================== -->
 
 <section
-    class="section support-section"
-    id="troubleshooting"
+    class="faq-section"
+    id="faq"
 >
 
-    <div class="container support-layout">
-
-
-        <div>
-
-            <div class="heading">
-
-                <small>
-                    Quick Troubleshooting
-                </small>
-
-                <h2>
-                    Start with the basics
-                </h2>
-
-                <p>
-                    A few simple checks can help identify
-                    the source of a game problem.
-                </p>
-
-            </div>
-
-
-            <div class="support-list">
-
-
-                <div class="support-item">
-
-                    <div class="support-number">
-                        01
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Check your connection
-                        </h3>
-
-                        <p>
-                            Make sure your internet connection
-                            is working normally when downloading
-                            or updating a game.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="support-item">
-
-                    <div class="support-number">
-                        02
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Restart the application
-                        </h3>
-
-                        <p>
-                            Close the relevant game or application
-                            completely and try again.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="support-item">
-
-                    <div class="support-number">
-                        03
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Check available storage
-                        </h3>
-
-                        <p>
-                            Insufficient disk space can interfere
-                            with downloads and installations.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="support-item">
-
-                    <div class="support-number">
-                        04
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Record the error
-                        </h3>
-
-                        <p>
-                            Note the exact error message before
-                            contacting official support.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-
-        <div class="info-box">
-
-            <div class="tag">
-                Support Checklist
-            </div>
-
-            <h2>
-                Make your support request easier
-            </h2>
-
-            <p>
-                Having the right information ready can make
-                troubleshooting much easier.
-            </p>
-
-
-            <div class="info-points">
-
-
-                <div class="info-point">
-
-                    <span class="check">
-                        ✓
-                    </span>
-
-                    Game title and version
-
-                </div>
-
-
-                <div class="info-point">
-
-                    <span class="check">
-                        ✓
-                    </span>
-
-                    Operating system information
-
-                </div>
-
-
-                <div class="info-point">
-
-                    <span class="check">
-                        ✓
-                    </span>
-
-                    Description of the problem
-
-                </div>
-
-
-                <div class="info-point">
-
-                    <span class="check">
-                        ✓
-                    </span>
-
-                    Exact error message
-
-                </div>
-
-
-                <div class="info-point">
-
-                    <span class="check">
-                        ✓
-                    </span>
-
-                    Steps already attempted
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- INFORMATION TO COLLECT -->
-
-<section class="section">
-
     <div class="container">
 
-
-        <div class="heading center">
+        <div class="section-heading">
 
             <small>
-                Before Contacting Support
+                Frequently Asked Questions
             </small>
 
             <h2>
-                Have these details ready
+                Big Fish Games Support FAQ
             </h2>
 
             <p>
-                Clear information helps support teams understand
-                the problem more quickly.
-            </p>
-
-        </div>
-
-
-        <div class="collect-grid">
-
-
-            <div class="collect-card">
-
-                <strong>
-                    🎮 Game Information
-                </strong>
-
-                <p>
-                    Write down the name of the affected game
-                    and the version if available.
-                </p>
-
-            </div>
-
-
-            <div class="collect-card">
-
-                <strong>
-                    💻 Device Details
-                </strong>
-
-                <p>
-                    Know which computer or operating system
-                    you are using.
-                </p>
-
-            </div>
-
-
-            <div class="collect-card">
-
-                <strong>
-                    ⚠️ Error Details
-                </strong>
-
-                <p>
-                    Keep the exact wording of any error message
-                    that appears on screen.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- FAQ -->
-
-<section class="section faq-section" id="faq">
-
-    <div class="container">
-
-
-        <div class="heading center">
-
-            <small>
-                Questions & Answers
-            </small>
-
-            <h2>
-                Helpful answers
-            </h2>
-
-            <p>
-                Here are some general answers to common
-                Big Fish Games support questions.
+                Quick answers to common support questions.
             </p>
 
         </div>
@@ -1792,88 +2932,103 @@ https://arsresolution.com/" class="help-button">
         <div class="faq">
 
 
-            <details class="faq-row">
+            <details>
 
                 <summary>
-                    Why won't my game start?
+                    Why is my Big Fish game not starting?
                 </summary>
 
                 <div class="faq-answer">
 
-                    Restart the computer and try opening the
-                    game again. Check for available updates
-                    and make note of any error message. If the
-                    issue remains, consult official support.
+                    Restart the game and your device, check
+                    for updates and make sure sufficient
+                    storage is available. If an error appears,
+                    record its exact wording.
 
                 </div>
 
             </details>
 
 
-            <details class="faq-row">
+            <details>
 
                 <summary>
-                    What can I do if a game download stops?
+                    What should I do if I forgot my password?
                 </summary>
 
                 <div class="faq-answer">
 
-                    Check your internet connection, available
-                    storage space, and whether the application
-                    is up to date. Then retry the download.
+                    Use the password recovery option on the
+                    account sign-in page and follow the
+                    instructions provided.
 
                 </div>
 
             </details>
 
 
-            <details class="faq-row">
+            <details>
 
                 <summary>
-                    What information is useful for account problems?
+                    Why is my game download failing?
                 </summary>
 
                 <div class="faq-answer">
 
-                    Be ready with the email associated with
-                    your account and a description of the
-                    problem. Never provide your password
-                    to anyone.
+                    Check your internet connection and available
+                    storage. Restart the application and try the
+                    download again.
 
                 </div>
 
             </details>
 
 
-            <details class="faq-row">
+            <details>
 
                 <summary>
-                    What should I do when a game displays an error?
+                    What information should I provide to support?
                 </summary>
 
                 <div class="faq-answer">
 
-                    Record the exact error message and when
-                    it occurs. Restart the application and
-                    check for updates before seeking further
-                    assistance.
+                    Provide the game name, device or operating
+                    system, description of the problem, exact
+                    error message and steps already attempted.
 
                 </div>
 
             </details>
 
 
-            <details class="faq-row">
+            <details>
 
                 <summary>
-                    Where should I go for official assistance?
+                    Can I get help with a purchase?
                 </summary>
 
                 <div class="faq-answer">
 
-                    For account, purchase, billing, or
-                    product-specific matters, use the current
-                    official Big Fish Games support resources.
+                    For account-specific billing or purchase
+                    questions, use the applicable official
+                    Big Fish Games support process.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Should I share my password with support?
+                </summary>
+
+                <div class="faq-answer">
+
+                    No. Never share your password, payment-card
+                    details, security codes or other sensitive
+                    credentials.
 
                 </div>
 
@@ -1887,32 +3042,37 @@ https://arsresolution.com/" class="help-button">
 </section>
 
 
+<!-- =====================================================
+     CTA
+===================================================== -->
 
-<!-- CTA -->
-
-<section class="cta" id="official">
+<section
+    class="cta"
+    id="support"
+>
 
     <div class="container">
 
         <div class="cta-box">
 
             <h2>
-                Need more assistance?
+                Still Need Help?
             </h2>
 
             <p>
-                If basic troubleshooting does not solve your
-                problem, use the official Big Fish Games support
-                resources for further assistance.
+                If the troubleshooting information above does
+                not resolve your problem, use the appropriate
+                official Big Fish Games support resources for
+                account-specific, billing or technical help.
             </p>
 
-            <!-- Replace # with the verified official support URL -->
-
             <a
-                href="https://arsresolution.com/"
+                href="https://www.bigfishgames.com/"
                 class="btn"
+                target="_blank"
+                rel="noopener"
             >
-                Open Official Support
+                Visit Big Fish Games
             </a>
 
         </div>
@@ -1922,13 +3082,13 @@ https://arsresolution.com/" class="help-button">
 </section>
 
 
-
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
     <div class="container">
-
 
         <div class="footer-grid">
 
@@ -1936,21 +3096,20 @@ https://arsresolution.com/" class="help-button">
             <div>
 
                 <div class="footer-title">
-                    Big Fish Games Help Center
+                    Big Fish Games Support
                 </div>
 
                 <p class="footer-text">
-
                     Independent informational content covering
-                    common game downloads, installation,
-                    account, update, and troubleshooting topics.
-
+                    common Big Fish Games account, download,
+                    installation, update, purchase and
+                    troubleshooting topics.
                 </p>
 
             </div>
 
 
-            <div class="footer-right">
+            <div>
 
                 <div class="footer-links">
 
@@ -1958,8 +3117,8 @@ https://arsresolution.com/" class="help-button">
                         Home
                     </a>
 
-                    <a href="#topics">
-                        Topics
+                    <a href="#article">
+                        Articles
                     </a>
 
                     <a href="#troubleshooting">
@@ -1970,18 +3129,24 @@ https://arsresolution.com/" class="help-button">
                         FAQ
                     </a>
 
+                    <a href="#support">
+                        Support
+                    </a>
+
                 </div>
 
             </div>
+
 
         </div>
 
 
         <div class="footer-bottom">
 
-            © 2026 Big Fish Games Help Center.
+            © 2026 Big Fish Games Support Guide.
             Independent informational website.
-            Big Fish Games is a trademark of its respective owner.
+            Big Fish Games and related marks belong to
+            their respective owner.
 
         </div>
 
@@ -1990,8 +3155,13 @@ https://arsresolution.com/" class="help-button">
 </footer>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
+
+/* MOBILE MENU */
 
 const menu =
     document.getElementById("menu");
@@ -1999,16 +3169,20 @@ const menu =
 const nav =
     document.getElementById("nav");
 
-menu.addEventListener("click", () => {
+menu.addEventListener("click", function(){
 
     nav.classList.toggle("active");
 
 });
 
 
-document.querySelectorAll("#nav a").forEach(link => {
+/* CLOSE MENU AFTER CLICK */
 
-    link.addEventListener("click", () => {
+document
+.querySelectorAll("#nav a")
+.forEach(function(link){
+
+    link.addEventListener("click", function(){
 
         nav.classList.remove("active");
 
@@ -2016,8 +3190,89 @@ document.querySelectorAll("#nav a").forEach(link => {
 
 });
 
-</script>
 
+/* ACTIVE ARTICLE NAVIGATION */
+
+const articleLinks =
+    document.querySelectorAll(".article-nav a");
+
+const articleSections =
+    document.querySelectorAll(".article-section");
+
+
+window.addEventListener("scroll", function(){
+
+    let current = "";
+
+    articleSections.forEach(function(section){
+
+        const sectionTop =
+            section.offsetTop - 170;
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    articleLinks.forEach(function(link){
+
+        link.style.color = "";
+        link.style.background = "";
+
+        if(
+            link.getAttribute("href") ===
+            "#" + current
+        ){
+
+            link.style.color =
+                "#31e7ff";
+
+            link.style.background =
+                "rgba(49,231,255,.07)";
+
+        }
+
+    });
+
+});
+
+
+/* SMOOTH ARTICLE NAVIGATION */
+
+articleLinks.forEach(function(link){
+
+    link.addEventListener("click", function(event){
+
+        const targetId =
+            this.getAttribute("href");
+
+        const target =
+            document.querySelector(targetId);
+
+        if(target){
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
